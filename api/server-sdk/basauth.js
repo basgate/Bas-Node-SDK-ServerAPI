@@ -85,7 +85,7 @@ async function getBasUserInfoV2(authid) {
             body: urlencoded,
             redirect: 'follow'
         };
-
+        // Basgate Base URL
         var url = `${BASURL}/api/v1/auth/secure/userinfo`
 
         console.log("params :", url, urlencoded.toString());
