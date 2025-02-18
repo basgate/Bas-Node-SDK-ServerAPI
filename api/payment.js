@@ -55,7 +55,7 @@ router.get('/status/:orderId', async (req, res) => {
             console.log("/status/:orderId response :", JSON.stringify(response.data))
             let data = response.data //await response.json()
             if (data.status == 1 && data.head.signature) {
-                // Only these fields required trxToken + trxToken + order.orderId
+                // Only these fields required trxToken + trxStatus + order.orderId
                 let { trxToken, trxStatus, order } = data.body
                 var input = trxToken + trxStatus + order.orderId
                 var verfiy = BasChecksum.verifySignature(input, MKEY, data.head.signature)
